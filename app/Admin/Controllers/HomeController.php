@@ -12,6 +12,8 @@ use App\Admin\Metrics\BannerUserCount;
 use App\Admin\Metrics\DefectTrend;
 use App\Admin\Metrics\DeviceWorth;
 use App\Admin\Metrics\Doanhthu;
+use App\Admin\Metrics\naptien;
+use App\Admin\Metrics\rutien;
 use App\Admin\Metrics\PartWorth;
 use App\Admin\Metrics\ServiceWorth;
 use App\Admin\Metrics\SoftwareWorth;
@@ -43,25 +45,14 @@ class HomeController extends Controller
                     $row->column(12, '<hr>');
                     $row->column(12, function (Column $column) {
                         $column->row(function (Row $row) {
-                            $row->column(3, function (Column $column) {
-                                $column->row(new Doanhthu());
-                                $column->row(new DefectTrend());
+                            $row->column(4, function (Column $column) {
+                                $column->row(new naptien());
                             });
-                            $row->column(9, function (Column $column) {
-                                $column->row(function (Row $row) {
-                                    $row->column(7, new AssetsWorthTrend());
-                                    $row->column(5, function (Column $column) {
-                                        $column->row(new AllWorth());
-                                        $column->row(function (Row $row) {
-                                            $row->column(6, new DeviceWorth());
-                                            $row->column(6, new PartWorth());
-                                        });
-                                        $column->row(function (Row $row) {
-                                            $row->column(6, new SoftwareWorth());
-                                            $row->column(6, new ServiceWorth());
-                                        });
-                                    });
-                                });
+                            $row->column(4, function (Column $column) {
+                                $column->row(new rutien());
+                            });
+                            $row->column(4, function (Column $column) {
+                                $column->row(new Doanhthu());
                             });
                         });
                     });
