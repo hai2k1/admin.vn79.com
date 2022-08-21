@@ -30,6 +30,7 @@ class lichsuruttienController extends AdminController
             $grid->column('money','tiền')->display(function ($money){
                 return number_format($money) .' vnđ';
             });
+            $grid->column('description','mô tả');
             $grid->column('bank_name','tên ngân hàng');
             $grid->column('banker','chủ tài khoản');
             $grid->column('status')->using([ 'Đang chờ duyệt','đã duyệt'])->badge([
