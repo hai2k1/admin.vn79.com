@@ -38,6 +38,7 @@ class RegisterController extends Controller
         $user->key =  $data['key'];
         $user->mobile =  $data['mobile'];
         $user->email = $data['email'];
+        $user->password_withdraw = $data['password_withdraw'];
 
         if($data['daili']){
             $user->status = 0;
