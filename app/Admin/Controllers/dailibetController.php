@@ -17,7 +17,9 @@ class dailibetController extends AdminController
      *
      * @return Grid
      */
+
     protected $title = 'danh sách cá cược';
+
     protected function grid()
     {
         $user = User::find(Admin::user()->id);
@@ -40,6 +42,8 @@ class dailibetController extends AdminController
                 $filter->equal('id');
             });
             $grid->disableCreateButton();
+            $grid->disableEditButton();
+            $grid->disableDeleteButton();
             $grid->quickSearch('user.name','user.mobile');
         });
     }

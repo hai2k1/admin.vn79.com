@@ -31,6 +31,7 @@ class HistoryPaymentController extends AdminController
             });
             $grid->column('bank_name','tên tài khoản');
             $grid->column('banker','chủ tài khoản');
+            $grid->column('description','mô tả');
             $grid->column('status')->using([ 'Đang chờ duyệt','đã duyệt'])->badge([
                 'default' => 'success',
                 0 => 'danger',
