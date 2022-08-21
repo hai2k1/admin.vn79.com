@@ -29,6 +29,7 @@ Route::group([
     Route::post('registerdaili',[RegisterController::class,'registerdaili']);
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('me', [AuthController::class, 'me']);
+    Route::post('card',[RegisterController::class,'addcard']);
 });
 
 Route::group([
@@ -39,5 +40,4 @@ Route::group([
     Route::get('banking',[HistoryPaymentController::class, 'banking']);
     Route::get('paymentsdaily',[HistoryPaymentController::class, 'historydaily']);
     Route::get('totaldaili',[HistoryPaymentController::class, 'doanhthu']);
-
 });

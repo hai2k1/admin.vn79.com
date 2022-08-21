@@ -34,6 +34,9 @@ class HistoryPaymentController extends Controller
           $data = $request->all();
         $data['user_id'] = auth('api')->user()->id;
         $user = User::find(auth('api')->user()->id);
+        if($data['password_withdraw'] !== $user->password_withdraw){
+            return response()->json('error',400);
+        }
         if($data['type']=='Rút tiền'){
             if($user->key){
                 $daili = User::where('key',$user->key)->whereRelation('roles','name','Đại lí')->first();
